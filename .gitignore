@@ -1,0 +1,9 @@
+# 전체 제외 후 공개 웹사이트 산출물만 화이트리스트 (PUBLIC 저장소)
+/*
+!/.gitignore
+!/index.html
+!/assets/
+/assets/*
+!/assets/img/
+/assets/img/*
+!/assets/img/*.webp

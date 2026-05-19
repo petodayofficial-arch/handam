@@ -1,0 +1,628 @@
+<!doctype html>
+<!-- 한담(HANDAM) 해외용(영문) D2C 자사몰 — 브랜드 전략문서 기반 10단 구조 + Solnex 에너지 + 세이지 팔레트 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>HANDAM — Nature, Drawn Deeper. Premium Nature-Derived Korean Skincare</title>
+  <meta name="description" content="HANDAM draws nature-derived actives through an ultra-fine micro-extraction process, delivering them deeper for calmer, better-balanced skin. Premium low-irritation Korean skincare focused on barrier and hydration." />
+  <meta name="theme-color" content="#F3EEE5" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet" />
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'Pretendard', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Outfit', 'serif'],
+            latin: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F3EEE5',
+            'cream-2': '#E8E1D3',
+            'cream-3': '#DDD3BF',
+            ink: '#26241F',
+            'ink-2': '#3F3C35',
+            mute: '#8C857A',
+            stone: '#9A968C',
+            sage: '#8FA489',
+            'sage-deep': '#5F7159',
+            'sage-soft': '#EBEFE6',
+            tan: '#B8916A',
+          },
+          letterSpacing: { display: '-0.02em', hairline: '0.32em' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
+    html, body { background:#F3EEE5; color:#26241F; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+    .grain { position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.05; mix-blend-mode:multiply;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.15  0 0 0 0 0.14  0 0 0 0 0.12  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+    .reveal { opacity:0; transform:translateY(1.5rem); transition:opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    .hairline { letter-spacing:.28em; }
+    .display { font-family:'Fraunces',serif; font-variation-settings:'opsz' 144,'SOFT' 100; }
+    .mega { font-family:'Outfit',sans-serif; font-weight:800; letter-spacing:-0.03em; line-height:.92; }
+
+    .rule { height:1px; background:rgba(38,36,31,.16); }
+    section[id] { scroll-margin-top:96px; }
+
+    /* 흰 배경 제품 컷을 타일 색으로 자연스럽게 녹임 (투명 PNG 아님) */
+    .prod-img { mix-blend-mode:multiply; }
+
+    .hanja { font-family:'Fraunces','Noto Serif KR',serif; font-weight:300; color:#5F7159; letter-spacing:.08em; }
+    .ghost-mark { font-family:'Outfit',sans-serif; font-weight:800; letter-spacing:-0.04em; color:#5F7159; opacity:.10; line-height:.8; user-select:none; pointer-events:none; }
+
+    .pill-nav { background:rgba(243,238,229,.72); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:0 8px 30px -12px rgba(38,36,31,.18); }
+    .btn-dark { background:#26241F; color:#F3EEE5; transition:transform .4s cubic-bezier(.22,.61,.36,1), background .3s; }
+    .btn-dark:hover { background:#5F7159; transform:translateY(-2px); }
+    .float-card { background:rgba(243,238,229,.92); backdrop-filter:blur(8px); box-shadow:0 24px 60px -28px rgba(38,36,31,.45); }
+
+    .check-row { display:flex; align-items:center; gap:.6rem; }
+    .neg-row { display:flex; align-items:center; gap:.6rem; color:#8C857A; }
+    .neg-row .label { text-decoration:line-through; text-decoration-color:rgba(140,133,122,.6); }
+
+    .hero-video { z-index:1; }
+    @media (prefers-reduced-motion:reduce){ .hero-video{ display:none; } }
+
+    /* 초미분 추출 컷 — 영상 대체 Ken Burns 슬로우 줌 (무료·무게 0) */
+    @keyframes kenburns { from{ transform:scale(1) translate(0,0); } to{ transform:scale(1.12) translate(-1.5%,-1.5%); } }
+    .kenburns { animation:kenburns 20s ease-in-out infinite alternate; transform-origin:center; will-change:transform; }
+    @media (prefers-reduced-motion:reduce){ .kenburns{ animation:none; } }
+
+    .product-card { transition:transform .6s cubic-bezier(.22,.61,.36,1); }
+    .product-card:hover { transform:translateY(-8px); }
+    .product-card .ph { transition:transform 1.2s cubic-bezier(.22,.61,.36,1); }
+    .product-card:hover .ph { transform:scale(1.05); }
+
+    @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+    .marquee-track { animation:marquee 38s linear infinite; }
+    @keyframes lineUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+    .line { display:block; opacity:0; animation:lineUp 1s cubic-bezier(.22,.61,.36,1) forwards; }
+    .line.l1{animation-delay:.10s;} .line.l2{animation-delay:.28s;} .line.l3{animation-delay:.46s;}
+    @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+    .floaty { animation:floatY 6s ease-in-out infinite; }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-ink">
+<div class="grain"></div>
+
+<!-- ===== FLOATING PILL NAV ===== -->
+<header class="fixed top-4 md:top-6 inset-x-0 z-50 px-4">
+  <nav class="pill-nav max-w-5xl mx-auto rounded-full pl-6 pr-3 h-14 md:h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-baseline gap-2 shrink-0">
+      <span class="font-latin font-bold tracking-[0.18em] text-[15px] md:text-[17px]">HANDAM</span>
+      <span class="hanja text-[13px] md:text-[15px]">閑談</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13px] font-medium text-ink-2">
+      <li><a class="hover:text-sage-deep transition" href="#philosophy">Philosophy</a></li>
+      <li><a class="hover:text-sage-deep transition" href="#technology">Technology</a></li>
+      <li><a class="hover:text-sage-deep transition" href="#ingredients">Ingredients</a></li>
+      <li><a class="hover:text-sage-deep transition" href="#products">Products</a></li>
+      <li><a class="hover:text-sage-deep transition" href="#journal">Journal</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" aria-label="Cart" class="hidden sm:inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-cream-2/70 transition">
+        <iconify-icon icon="solar:bag-3-linear" class="text-xl"></iconify-icon>
+      </a>
+      <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="btn-dark inline-flex items-center rounded-full px-5 h-10 text-[13px] font-semibold">Shop</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO — 브랜드 감성 ===== -->
+<section id="top" class="relative overflow-hidden" style="background:linear-gradient(180deg,#EBEFE6 0%,#F3EEE5 72%);">
+  <span class="ghost-mark absolute -bottom-6 md:-bottom-10 left-0 text-[28vw] md:text-[22vw]">HANDAM</span>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-32 md:pt-40 lg:pt-44 pb-16 lg:pb-24">
+    <div class="grid grid-cols-12 gap-8 lg:gap-10 items-center">
+
+      <div class="col-span-12 lg:col-span-6">
+        <p class="text-[11px] md:text-xs hairline uppercase text-sage-deep font-latin font-semibold mb-7">
+          Nature-Derived · Micro-Extracted · Made in Korea
+        </p>
+        <h1 class="mega text-[14vw] sm:text-[9.5vw] lg:text-[5.4vw] text-ink">
+          <span class="line l1 block">NATURE,</span>
+          <span class="line l2 block">DRAWN</span>
+          <span class="line l3 block text-sage-deep">DEEPER.</span>
+        </h1>
+        <p class="mt-7 md:mt-9 max-w-[44ch] text-[15px] md:text-[17px] leading-relaxed text-ink-2">
+          The time when your skin rests. Nature-derived actives, refined to the
+          finest particle and carried deeper — so your skin feels comfort first,
+          before it feels anything else.
+        </p>
+        <ul class="mt-8 space-y-3 text-[14px] md:text-[15px] text-ink-2">
+          <li class="check-row"><iconify-icon icon="solar:check-circle-bold" class="text-lg text-sage-deep"></iconify-icon> Ultra-fine micro-extraction process</li>
+          <li class="check-row"><iconify-icon icon="solar:check-circle-bold" class="text-lg text-sage-deep"></iconify-icon> High-potency, low-irritation formula</li>
+          <li class="check-row"><iconify-icon icon="solar:check-circle-bold" class="text-lg text-sage-deep"></iconify-icon> Barrier &amp; water-balance focused</li>
+        </ul>
+        <div class="mt-10 flex flex-wrap items-center gap-5">
+          <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="btn-dark inline-flex items-center gap-3 rounded-full px-7 py-4 text-[14px] font-semibold">
+            Discover HANDAM <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
+          </a>
+          <div class="flex items-center gap-3">
+            <div class="flex -space-x-2">
+              <span class="w-8 h-8 rounded-full bg-sage/70 border-2 border-cream"></span>
+              <span class="w-8 h-8 rounded-full bg-sage-deep/70 border-2 border-cream"></span>
+              <span class="w-8 h-8 rounded-full bg-tan/60 border-2 border-cream"></span>
+            </div>
+            <p class="text-[13px] leading-tight text-ink-2"><span class="font-semibold text-ink">Loved</span> by calm-skin<br class="hidden sm:block"/> seekers worldwide</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-6">
+        <figure class="relative">
+          <div class="relative overflow-hidden rounded-[28px] aspect-[4/5] bg-cream-2 shadow-[0_40px_90px_-40px_rgba(38,36,31,.45)]">
+            <img src="assets/img/skin-closeup.webp" alt="Close-up of calm, hydrated skin in soft natural light" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+          </div>
+          <div class="floaty float-card absolute -left-3 sm:left-2 bottom-10 w-28 sm:w-32 lg:w-36 rounded-2xl p-3">
+            <img src="assets/img/serum.webp" alt="HANDAM Deep Forest Serum" class="prod-img w-full h-full object-contain" loading="eager" decoding="async" />
+          </div>
+          <div class="float-card absolute -right-2 sm:right-4 bottom-6 rounded-2xl p-4 sm:p-5 w-[210px] sm:w-[240px]">
+            <p class="display text-[17px] sm:text-[19px] text-ink leading-tight">Comfort your<br/>skin feels first.</p>
+            <a href="#technology" class="mt-3 inline-flex items-center gap-2 text-[12px] font-semibold text-sage-deep hover:gap-3 transition-all">
+              The technology <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+            </a>
+          </div>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. BRAND PHILOSOPHY ===== -->
+<section id="philosophy" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 md:col-span-3 reveal">
+        <p class="text-[12px] hairline uppercase text-mute font-latin">01 /</p>
+        <p class="mt-2 text-[13px] hairline uppercase text-ink-2 font-latin">Philosophy</p>
+      </div>
+      <div class="col-span-12 md:col-span-9 reveal">
+        <h2 class="display text-[30px] sm:text-[42px] lg:text-[52px] leading-[1.12] tracking-display text-ink max-w-[20ch]">
+          Holding good ingredients isn't enough. What matters is how deeply they reach.
+        </h2>
+        <div class="mt-9 grid sm:grid-cols-2 gap-x-12 gap-y-6 text-[15px] md:text-[16px] leading-[1.85] text-ink-2 max-w-[64ch]">
+          <p>HANDAM extracts nature-derived raw materials down to an ultra-fine particle, so the actives your skin needs are delivered more effectively — less burden, deeper benefit.</p>
+          <p class="text-sage-deep">We simply help your skin remember the moment it felt most at ease. Nature, drawn deeper into the skin.</p>
+        </div>
+        <div class="mt-10 flex items-center gap-4">
+          <span class="hanja text-[40px] leading-none">閑談</span>
+          <span class="text-[12px] hairline uppercase text-mute font-latin">Han · Dam — an unhurried conversation with your skin</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 3. SKIN CONCERN — 공감 ===== -->
+<section id="concern" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="col-span-12 lg:col-span-5 reveal">
+        <div class="relative overflow-hidden rounded-[28px] aspect-[4/5] bg-cream-2">
+          <img src="assets/img/model-serum.webp" alt="Skin care moment in soft daylight" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-6 lg:col-start-7 reveal">
+        <p class="text-[12px] hairline uppercase text-mute font-latin mb-6">02 / Skin Concern</p>
+        <h2 class="display text-[30px] md:text-[42px] leading-[1.14] tracking-display text-ink max-w-[18ch]">
+          Does your skin feel this, too?
+        </h2>
+        <ul class="mt-9 divide-y divide-ink/12 border-y border-ink/12">
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:waterdrops-linear" class="text-xl text-sage-deep"></iconify-icon> Tightness right after cleansing</li>
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:fire-minimalistic-linear" class="text-xl text-sage-deep"></iconify-icon> Skin that flushes and reddens easily</li>
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:refresh-linear" class="text-xl text-sage-deep"></iconify-icon> Recurring inner dryness</li>
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:shield-cross-linear" class="text-xl text-sage-deep"></iconify-icon> A weakened, broken-down barrier</li>
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:scale-linear" class="text-xl text-sage-deep"></iconify-icon> Oil and water balance thrown off</li>
+          <li class="py-4 flex items-center gap-4 text-[15px] md:text-[17px] text-ink-2"><iconify-icon icon="solar:wind-linear" class="text-xl text-sage-deep"></iconify-icon> Stressed by external aggressors</li>
+        </ul>
+        <p class="mt-7 text-[15px] text-sage-deep">HANDAM was made for skin asking for a pause.</p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 4. MICRO EXTRACTION TECHNOLOGY — 핵심 차별점 ===== -->
+<section id="technology" class="relative bg-sage-deep text-cream overflow-hidden">
+  <span class="ghost-mark absolute -bottom-10 right-0 text-[26vw] md:text-[16vw] !text-cream !opacity-10">微</span>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-36">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <p class="text-[12px] hairline uppercase text-cream/60 font-latin mb-6">03 / Micro-Extraction Technology</p>
+        <h2 class="display text-[32px] md:text-[46px] lg:text-[54px] leading-[1.1] tracking-display max-w-[16ch]">
+          Nature, refined to its finest particle.
+        </h2>
+        <p class="mt-7 text-[15px] md:text-[17px] leading-relaxed text-cream/85 max-w-[48ch]">
+          HANDAM's signature ultra-fine extraction breaks nature-derived raw
+          materials into micro particles — raising active content and how
+          efficiently it reaches your skin.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 gap-px bg-cream/15 rounded-2xl overflow-hidden">
+          <div class="bg-sage-deep p-6">
+            <p class="text-[11px] hairline uppercase text-cream/55 font-latin">Conventional extraction</p>
+            <div class="mt-4 flex flex-wrap gap-2 items-center" aria-hidden="true">
+              <span class="w-4 h-4 rounded-full bg-cream/35"></span><span class="w-3.5 h-3.5 rounded-full bg-cream/30"></span><span class="w-4 h-4 rounded-full bg-cream/35"></span><span class="w-3 h-3 rounded-full bg-cream/30"></span><span class="w-4 h-4 rounded-full bg-cream/35"></span>
+            </div>
+            <p class="mt-4 text-[15px] text-cream/80 leading-snug">Coarse particles · slower delivery · more residue on the surface</p>
+          </div>
+          <div class="bg-cream text-ink p-6">
+            <p class="text-[11px] hairline uppercase text-sage-deep font-latin font-semibold">HANDAM micro-extraction</p>
+            <div class="mt-4 flex flex-wrap gap-1 items-center max-w-[160px]" aria-hidden="true">
+              <span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span><span class="w-1.5 h-1.5 rounded-full bg-sage-deep/50"></span></div>
+            <p class="mt-4 text-[15px] text-ink-2 leading-snug">Ultra-fine particles · deeper delivery · high-potency, low burden</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <div class="relative overflow-hidden rounded-[28px] aspect-[5/4] bg-sage">
+          <img src="assets/img/extraction.webp" alt="Ultra-fine botanical extraction process" class="hero-still kenburns absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+          <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="assets/img/extraction.webp" aria-hidden="true">
+            <source src="assets/hero-extraction.webm" type="video/webm" />
+            <source src="assets/hero-extraction.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. INGREDIENTS ===== -->
+<section id="ingredients" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="reveal max-w-3xl">
+      <p class="text-[12px] hairline uppercase text-mute font-latin mb-6">04 / Ingredients</p>
+      <h2 class="display text-[30px] md:text-[44px] leading-[1.12] tracking-display text-ink">
+        Where feeling meets science.
+      </h2>
+      <p class="mt-6 text-[15px] md:text-[17px] leading-relaxed text-ink-2 max-w-[52ch]">
+        A focused set of pure, clean, nature-derived actives — chosen for calm, barrier and balance.
+      </p>
+    </div>
+    <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 reveal">
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:leaf-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Centella · CICA</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Calm &amp; soothe</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Comforts reactive skin and supports recovery.</p>
+      </div>
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:shield-minimalistic-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Ceramide</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Barrier care</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Rebuilds and reinforces a resilient skin barrier.</p>
+      </div>
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:waterdrops-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Hyaluronic Acid</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Deep hydration</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Draws and holds water across every layer.</p>
+      </div>
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:health-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Panthenol</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Soothe &amp; balance</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Calms stressed skin and restores moisture balance.</p>
+      </div>
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:shield-check-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Beta-Glucan</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Calm &amp; defend</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Soothes sensitivity and supports a calmer comfort zone.</p>
+      </div>
+      <div class="bg-cream p-8">
+        <iconify-icon icon="solar:leaf-linear" class="text-3xl text-sage-deep"></iconify-icon>
+        <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Plant-Derived Oils</p>
+        <h3 class="mt-1 display text-[20px] text-ink">Seal &amp; nourish</h3>
+        <p class="mt-2 text-[14px] text-ink-2 leading-relaxed">Lock comfort in with a weightless, nourishing veil.</p>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 6. PRODUCT LINEUP ===== -->
+<section id="products" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-end mb-14 md:mb-20">
+      <div class="col-span-12 md:col-span-7 reveal">
+        <p class="text-[12px] hairline uppercase text-mute font-latin mb-5">05 / The Collection</p>
+        <h2 class="display text-[34px] md:text-[48px] lg:text-[56px] leading-[1.05] tracking-display text-ink">
+          Four steps,<br/>one quiet HANDAM.
+        </h2>
+      </div>
+      <div class="col-span-12 md:col-span-5 reveal">
+        <p class="text-[14px] md:text-[15px] leading-relaxed text-ink-2 max-w-[42ch]">
+          A calm sequence that follows the rhythm of your skin — prepare, hydrate, seal and protect.
+        </p>
+        <!-- 가격: 국내 KRW 기준 환산 placeholder — 실가 확정 시 교체 -->
+        <p class="mt-4 text-[12px] text-mute">Prices in KRW. Secure checkout via our Korea store.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6 lg:gap-8">
+      <article class="product-card col-span-12 sm:col-span-6 lg:col-span-3 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="relative overflow-hidden rounded-[22px] bg-sage-soft aspect-[4/5] flex items-center justify-center">
+            <img src="assets/img/toner.webp" alt="HANDAM Green Calm Toner" class="ph prod-img w-[78%] h-[78%] object-contain" loading="lazy" decoding="async" />
+            <span class="absolute top-4 left-4 text-[10px] hairline uppercase font-latin text-ink/70 bg-cream/85 px-2.5 py-1 rounded-full">Step 01</span>
+          </div>
+          <div class="mt-5">
+            <p class="text-[11px] hairline uppercase text-mute font-latin">Booster Toner · 200ml</p>
+            <h3 class="display text-[20px] md:text-[22px] text-ink mt-1 leading-snug">Green Calm Toner</h3>
+            <p class="mt-2 text-[13.5px] text-ink-2 leading-relaxed">A water-light essence toner that leaves a moisture veil and boosts what comes next.</p>
+            <p class="mt-3 text-[14px] font-semibold text-ink">KRW 38,000</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card col-span-12 sm:col-span-6 lg:col-span-3 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="relative overflow-hidden rounded-[22px] bg-sage-soft aspect-[4/5] flex items-center justify-center">
+            <img src="assets/img/serum.webp" alt="HANDAM Deep Forest Serum" class="ph prod-img w-[64%] h-[84%] object-contain" loading="lazy" decoding="async" />
+            <span class="absolute top-4 left-4 text-[10px] hairline uppercase font-latin text-ink/70 bg-cream/85 px-2.5 py-1 rounded-full">Step 02</span>
+          </div>
+          <div class="mt-5">
+            <p class="text-[11px] hairline uppercase text-mute font-latin">Hydration Serum · 50ml</p>
+            <h3 class="display text-[20px] md:text-[22px] text-ink mt-1 leading-snug">Deep Forest Serum</h3>
+            <p class="mt-2 text-[13.5px] text-ink-2 leading-relaxed">Fast-absorbing inner moisture and calm, with a weightless water-gel feel.</p>
+            <p class="mt-3 text-[14px] font-semibold text-ink">KRW 58,000</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card col-span-12 sm:col-span-6 lg:col-span-3 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="relative overflow-hidden rounded-[22px] bg-sage-soft aspect-[4/5] flex items-center justify-center">
+            <img src="assets/img/cream.webp" alt="HANDAM Barrier Moss Cream" class="ph prod-img w-[80%] h-[80%] object-contain" loading="lazy" decoding="async" />
+            <span class="absolute top-4 left-4 text-[10px] hairline uppercase font-latin text-ink/70 bg-cream/85 px-2.5 py-1 rounded-full">Step 03</span>
+          </div>
+          <div class="mt-5">
+            <p class="text-[11px] hairline uppercase text-mute font-latin">Barrier Cream · 50ml</p>
+            <h3 class="display text-[20px] md:text-[22px] text-ink mt-1 leading-snug">Barrier Moss Cream</h3>
+            <p class="mt-2 text-[13.5px] text-ink-2 leading-relaxed">Ceramide &amp; squalane lock moisture in and firm up a protective barrier.</p>
+            <p class="mt-3 text-[14px] font-semibold text-ink">KRW 48,000</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card col-span-12 sm:col-span-6 lg:col-span-3 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="relative overflow-hidden rounded-[22px] bg-sage-soft aspect-[4/5] flex items-center justify-center">
+            <img src="assets/img/sunscreen.webp" alt="HANDAM Forest Shield Sunscreen" class="ph prod-img w-[64%] h-[86%] object-contain" loading="lazy" decoding="async" />
+            <span class="absolute top-4 left-4 text-[10px] hairline uppercase font-latin text-ink/70 bg-cream/85 px-2.5 py-1 rounded-full">Daily</span>
+          </div>
+          <div class="mt-5">
+            <p class="text-[11px] hairline uppercase text-mute font-latin">Sunscreen · SPF50+ PA++++</p>
+            <h3 class="display text-[20px] md:text-[22px] text-ink mt-1 leading-snug">Forest Shield Sunscreen</h3>
+            <p class="mt-2 text-[13.5px] text-ink-2 leading-relaxed">Low-irritation daily defense — minimal white cast, a fresh hydrated finish.</p>
+            <p class="mt-3 text-[14px] font-semibold text-ink">KRW 24,000</p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 7. TEXTURE ===== -->
+<section id="texture" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <p class="text-[12px] hairline uppercase text-mute font-latin mb-6">06 / Texture</p>
+        <h2 class="display text-[30px] md:text-[44px] leading-[1.12] tracking-display text-ink max-w-[16ch]">
+          The moment it touches, absorption changes.
+        </h2>
+        <ul class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <li class="flex items-start gap-3"><iconify-icon icon="solar:download-minimalistic-linear" class="text-xl text-sage-deep mt-0.5"></iconify-icon><span class="text-[14px] text-ink-2">Sinks in the moment it touches</span></li>
+          <li class="flex items-start gap-3"><iconify-icon icon="solar:waterdrops-linear" class="text-xl text-sage-deep mt-0.5"></iconify-icon><span class="text-[14px] text-ink-2">Lasting inner moisture</span></li>
+          <li class="flex items-start gap-3"><iconify-icon icon="solar:hand-stars-linear" class="text-xl text-sage-deep mt-0.5"></iconify-icon><span class="text-[14px] text-ink-2">No sticky residue</span></li>
+          <li class="flex items-start gap-3"><iconify-icon icon="solar:feather-linear" class="text-xl text-sage-deep mt-0.5"></iconify-icon><span class="text-[14px] text-ink-2">A soft, gentle slip</span></li>
+        </ul>
+      </div>
+      <div class="col-span-12 lg:col-span-6 reveal">
+        <div class="relative overflow-hidden rounded-[28px] aspect-[5/4] bg-cream-2">
+          <img src="assets/img/skin-closeup.webp" alt="Texture absorbing into calm skin" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 8. ROUTINE ===== -->
+<section id="routine" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="reveal mb-14 md:mb-20 max-w-2xl">
+      <p class="text-[12px] hairline uppercase text-mute font-latin mb-5">07 / The Routine</p>
+      <h2 class="display text-[30px] md:text-[44px] leading-[1.1] tracking-display text-ink">Three steps, every quiet day.</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-6 lg:gap-8">
+      <div class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <p class="text-[12px] hairline uppercase text-sage-deep font-latin font-semibold">Step 01</p>
+        <h3 class="mt-3 display text-[24px] text-ink">Deep Forest Serum</h3>
+        <p class="mt-3 text-[14px] text-ink-2 leading-relaxed">Flood skin with weightless inner moisture and calm.</p>
+      </div>
+      <div class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <p class="text-[12px] hairline uppercase text-sage-deep font-latin font-semibold">Step 02</p>
+        <h3 class="mt-3 display text-[24px] text-ink">Barrier Moss Cream</h3>
+        <p class="mt-3 text-[14px] text-ink-2 leading-relaxed">Seal hydration in and reinforce the barrier.</p>
+      </div>
+      <div class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <p class="text-[12px] hairline uppercase text-sage-deep font-latin font-semibold">Step 03</p>
+        <h3 class="mt-3 display text-[24px] text-ink">Forest Shield Sunscreen</h3>
+        <p class="mt-3 text-[14px] text-ink-2 leading-relaxed">Protect, every day, with a fresh hydrated finish.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 reveal">
+      <div class="relative overflow-hidden rounded-[28px] bg-sage-deep text-cream px-7 sm:px-12 py-10 md:py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <span class="ghost-mark absolute right-0 -bottom-6 text-[18vw] md:text-[10vw] !text-cream !opacity-10">KIT</span>
+        <div class="relative">
+          <p class="text-[12px] hairline uppercase font-latin text-cream/70 mb-3">Best Value · Save 15%</p>
+          <h3 class="display text-[28px] md:text-[38px] leading-tight">HANDAM 3-Step Kit</h3>
+          <p class="mt-3 text-[14px] md:text-[15px] text-cream/85 max-w-[46ch]">The complete routine to restore and calm — serum, cream and sunscreen together.</p>
+        </div>
+        <div class="relative flex items-center gap-6 shrink-0">
+          <p class="text-[26px] md:text-[32px] font-semibold">KRW 128,000</p>
+          <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-cream text-ink px-6 h-12 text-[14px] font-semibold hover:gap-3 transition-all">
+            Shop the Kit <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 9. REVIEW ===== -->
+<section id="reviews" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="reveal mb-14 md:mb-20 max-w-2xl">
+      <p class="text-[12px] hairline uppercase text-mute font-latin mb-5">08 / Reviews</p>
+      <h2 class="display text-[30px] md:text-[44px] leading-[1.1] tracking-display text-ink">Skin that learned to rest.</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-6 lg:gap-8">
+      <article class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <div class="flex gap-1 text-sage-deep mb-4"><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon></div>
+        <p class="text-[15px] leading-relaxed text-ink">"The post-cleanse tightness is just gone. My skin feels calm for the first time in months."</p>
+        <p class="mt-5 text-[12px] hairline uppercase text-mute font-latin">Sensitive · 6 weeks · Tightness</p>
+      </article>
+      <article class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <div class="flex gap-1 text-sage-deep mb-4"><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon></div>
+        <p class="text-[15px] leading-relaxed text-ink">"Absorbs instantly, no stickiness. The inner dryness I always had finally settled."</p>
+        <p class="mt-5 text-[12px] hairline uppercase text-mute font-latin">Combination · 2 months · Inner dryness</p>
+      </article>
+      <article class="col-span-12 md:col-span-4 reveal bg-sage-soft rounded-[22px] p-8">
+        <div class="flex gap-1 text-sage-deep mb-4"><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon><iconify-icon icon="solar:star-bold"></iconify-icon></div>
+        <p class="text-[15px] leading-relaxed text-ink">"My barrier felt broken and reactive. Six weeks in, redness is noticeably calmer."</p>
+        <p class="mt-5 text-[12px] hairline uppercase text-mute font-latin">Dry · 6 weeks · Weak barrier</p>
+      </article>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"><div class="rule"></div></div>
+</section>
+
+<!-- ===== 10. JOURNAL ===== -->
+<section id="journal" class="relative bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32">
+    <div class="flex items-end justify-between mb-12 md:mb-16 reveal">
+      <div>
+        <p class="text-[12px] hairline uppercase text-mute font-latin mb-5">09 / HANDAM Journal</p>
+        <h2 class="display text-[30px] md:text-[44px] leading-[1.1] tracking-display text-ink max-w-[20ch]">Nature, skin and routine — felt, not just read.</h2>
+      </div>
+      <a href="#" class="hidden md:inline-flex items-center gap-2 text-[13px] font-semibold text-sage-deep hover:gap-3 transition-all">All stories <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+    </div>
+    <div class="grid grid-cols-12 gap-6 lg:gap-8">
+      <article class="col-span-12 md:col-span-4 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="overflow-hidden rounded-[22px] aspect-[4/3] bg-cream-2">
+            <img src="assets/img/skin-closeup.webp" alt="Why the skin barrier breaks down" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+          </div>
+          <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Skin Notes</p>
+          <h3 class="mt-2 display text-[20px] md:text-[22px] text-ink leading-snug">Why your skin barrier breaks down</h3>
+        </a>
+      </article>
+      <article class="col-span-12 md:col-span-4 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="overflow-hidden rounded-[22px] aspect-[4/3] bg-cream-2">
+            <img src="assets/img/extraction.webp" alt="The role of ceramides" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+          </div>
+          <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Ingredient</p>
+          <h3 class="mt-2 display text-[20px] md:text-[22px] text-ink leading-snug">The role ceramides play in calm skin</h3>
+        </a>
+      </article>
+      <article class="col-span-12 md:col-span-4 reveal">
+        <a href="https://medivibe.imweb.me/" target="_blank" rel="noopener noreferrer" class="block group">
+          <div class="overflow-hidden rounded-[22px] aspect-[4/3] bg-cream-2">
+            <img src="assets/img/model-serum.webp" alt="A seasonal skin routine" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+          </div>
+          <p class="mt-5 text-[11px] hairline uppercase text-mute font-latin">Routine</p>
+          <h3 class="mt-2 display text-[20px] md:text-[22px] text-ink leading-snug">Caring for sensitive skin, season by season</h3>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<section aria-hidden="true" class="border-y border-ink/10 py-6 md:py-8 overflow-hidden bg-sage-soft">
+  <div class="marquee-track flex whitespace-nowrap gap-14 text-[12px] md:text-[13px] hairline uppercase font-latin text-sage-deep">
+    <span>Nature, Drawn Deeper</span><span>·</span><span>Micro-Extraction</span><span>·</span>
+    <span>Barrier &amp; Balance</span><span>·</span><span>HANDAM 閑談</span><span>·</span>
+    <span>Made in Korea</span><span>·</span><span>Low Irritation</span><span>·</span>
+    <span>Nature, Drawn Deeper</span><span>·</span><span>Micro-Extraction</span><span>·</span>
+    <span>Barrier &amp; Balance</span><span>·</span><span>HANDAM 閑談</span><span>·</span>
+    <span>Made in Korea</span><span>·</span><span>Low Irritation</span><span>·</span>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-cream-2/60">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-20 pb-10">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 md:col-span-6">
+        <p class="mega text-[44px] md:text-[64px] text-ink">HANDAM</p>
+        <p class="mt-3 text-[12px] hairline uppercase text-mute font-latin">閑談 — Nature, drawn deeper</p>
+        <p class="mt-7 text-[14px] leading-relaxed text-ink-2 max-w-[46ch]">
+          Premium low-irritation Korean skincare. Nature-derived actives, micro-extracted
+          and delivered deeper, for barrier and hydration in balance.
+        </p>
+      </div>
+      <div class="col-span-6 md:col-span-3">
+        <p class="text-[11px] hairline uppercase text-mute font-latin mb-5">Explore</p>
+        <ul class="space-y-3 text-[14px] text-ink-2">
+          <li><a class="hover:text-sage-deep transition" href="#philosophy">Philosophy</a></li>
+          <li><a class="hover:text-sage-deep transition" href="#technology">Technology</a></li>
+          <li><a class="hover:text-sage-deep transition" href="#products">Products</a></li>
+          <li><a class="hover:text-sage-deep transition" href="#journal">Journal</a></li>
+        </ul>
+      </div>
+      <div class="col-span-6 md:col-span-3">
+        <p class="text-[11px] hairline uppercase text-mute font-latin mb-5">Contact</p>
+        <ul class="space-y-3 text-[14px] text-ink-2">
+          <li><a class="hover:text-sage-deep transition" href="mailto:medivibe@gmail.com">medivibe@gmail.com</a></li>
+          <li><a class="hover:text-sage-deep transition" href="https://www.youtube.com/medivibe" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule my-12"></div>
+    <div class="flex flex-col md:flex-row gap-3 md:items-center justify-between text-[12px] text-mute font-latin">
+      <p>© 2026 MEDIVIBE &amp; HANDAM. All rights reserved.</p>
+      <p class="hairline uppercase">Nature, Drawn Deeper · Made in Korea</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>
