@@ -91,9 +91,14 @@
 
     @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
     .marquee-track { animation:marquee 38s linear infinite; }
-    @keyframes lineUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
-    .line { display:block; opacity:0; animation:lineUp 1s cubic-bezier(.22,.61,.36,1) forwards; }
-    .line.l1{animation-delay:.10s;} .line.l2{animation-delay:.28s;} .line.l3{animation-delay:.46s;}
+    /* 히어로 헤드라인 — 타이핑 효과 + 깜빡이는 캐럿 */
+    .hl { display:block; min-height:1em; }
+    .type-caret { display:inline-block; width:.055em; height:.78em; margin-left:.05em;
+      background:currentColor; vertical-align:-.06em;
+      animation:caretBlink .9s steps(1) infinite; }
+    .type-caret.is-done { animation:caretBlink 1.15s steps(1) infinite; }
+    @keyframes caretBlink { 0%,49%{opacity:1;} 50%,100%{opacity:0;} }
+    @media (prefers-reduced-motion:reduce){ .type-caret{ display:none; } }
     @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
     .floaty { animation:floatY 6s ease-in-out infinite; }
   </style>
@@ -136,9 +141,9 @@
           Nature-Derived · Micro-Extracted · Made in Korea
         </p>
         <h1 class="mega text-[14vw] sm:text-[9.5vw] lg:text-[5.4vw] text-ink">
-          <span class="line l1 block">NATURE,</span>
-          <span class="line l2 block">DRAWN</span>
-          <span class="line l3 block text-sage-deep">DEEPER.</span>
+          <span class="hl block">NATURE,</span>
+          <span class="hl block">DRAWN</span>
+          <span class="hl block text-sage-deep">DEEPER.</span>
         </h1>
         <p class="mt-7 md:mt-9 max-w-[44ch] text-[15px] md:text-[17px] leading-relaxed text-ink-2">
           The time when your skin rests. Nature-derived actives, refined to the
@@ -622,6 +627,36 @@
     }
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // 히어로 헤드라인 — 한 줄씩 타이핑 + 깜빡이는 캐럿
+  (function typeHeadline() {
+    const lines = [...document.querySelectorAll('#top .hl')];
+    if (!lines.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // 전체 즉시 표시
+    const full = lines.map((l) => l.textContent);
+    lines.forEach((l) => { l.textContent = ''; });
+    const caret = document.createElement('span');
+    caret.className = 'type-caret';
+    let li = 0, ci = 0;
+    function step() {
+      if (li >= lines.length) {
+        lines[lines.length - 1].appendChild(caret);
+        caret.classList.add('is-done');
+        return;
+      }
+      const line = lines[li], txt = full[li];
+      if (ci === 0) line.appendChild(caret);
+      if (ci < txt.length) {
+        caret.insertAdjacentText('beforebegin', txt[ci]);
+        ci++;
+        setTimeout(step, 65);
+      } else {
+        li++; ci = 0;
+        setTimeout(step, 280);
+      }
+    }
+    setTimeout(step, 350);
+  })();
 </script>
 
 </body>
