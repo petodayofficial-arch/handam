@@ -17,7 +17,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
 
   <script>
@@ -26,7 +26,7 @@
         extend: {
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Fraunces', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
           },
           colors: {
             paper: '#FBFCFD',
@@ -53,7 +53,9 @@
     html, body { background:#FBFCFD; color:#16252D; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
     section[id] { scroll-margin-top: 92px; }
 
-    .display { font-family:'Fraunces', Georgia, serif; }
+    .display { font-family:'Cormorant Garamond', Georgia, serif; letter-spacing:.005em; }
+    /* Cormorant runs light/small — give headings a touch more weight & size for presence */
+    .display.font-light { font-weight:500; }
     .eyebrow { letter-spacing:.32em; text-transform:uppercase; font-size:11px; font-weight:500; }
 
     /* fine grain to keep the whites from going flat */
@@ -105,19 +107,19 @@
 
 <!-- ===== NAV ===== -->
 <header class="fixed top-0 inset-x-0 z-50 nav-glass border-b border-[rgba(22,37,45,.07)]">
-  <nav class="max-w-7xl mx-auto h-[68px] px-5 md:px-8 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-3">
-      <span class="display text-[22px] tracking-[.18em] font-medium">HANDAM</span>
-      <span class="hidden sm:inline text-[11px] text-mute tracking-wider2 uppercase">Korean Botanical Science</span>
+  <nav class="max-w-7xl mx-auto h-[68px] px-5 md:px-8 flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center gap-3 shrink-0">
+      <span class="display text-[26px] tracking-[.18em] font-semibold">HANDAM</span>
+      <span class="hidden lg:inline text-[11px] text-mute tracking-wider2 uppercase">Korean Botanical Science</span>
     </a>
-    <ul class="hidden md:flex items-center gap-9 text-[13px] text-ink2">
+    <ul class="hidden lg:flex items-center gap-7 text-[13px] text-ink2 whitespace-nowrap">
       <li><a class="hover:text-aqua-deep transition" href="#philosophy">Philosophy</a></li>
       <li><a class="hover:text-aqua-deep transition" href="#ingredient">Ingredient</a></li>
       <li><a class="hover:text-aqua-deep transition" href="#technology">Technology</a></li>
       <li><a class="hover:text-aqua-deep transition" href="#serum">The Serum</a></li>
       <li><a class="hover:text-aqua-deep transition" href="#ritual">Ritual</a></li>
     </ul>
-    <a href="#serum" class="btn-ink rounded-full px-5 py-2.5 text-[13px] font-medium">Discover</a>
+    <a href="#serum" class="btn-ink rounded-full px-5 py-2.5 text-[13px] font-medium shrink-0">Discover</a>
   </nav>
 </header>
 
