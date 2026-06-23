@@ -9,3 +9,11 @@
 !/assets/img/*.webp
 !/assets/hero-handam.webm
 !/assets/hero-handam.mp4
+
+# handam2 — Coastal Rosa 랜딩 (별도 하위 경로 /handam2/, 기존 메인에 영향 없음)
+!/handam2/
+/handam2/*
+!/handam2/index.html
+!/handam2/images/
+/handam2/images/*
+!/handam2/images/*.png

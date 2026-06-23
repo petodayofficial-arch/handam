@@ -1,0 +1,542 @@
+<!doctype html>
+<!-- HANDAM · Coastal Rosa Active Recovery Serum — English D2C landing.
+     Identity sourced strictly from 기획안.md: Korean native botanicals (Rosa rugosa),
+     ultra-fine micro-extraction, antioxidant recovery, barrier & sensitive-skin care,
+     sustainable beauty, premium active serum. Aqueous clinical-clean aesthetic. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>HANDAM — Coastal Rosa Active Recovery Serum · Korean Botanical Science</title>
+  <meta name="description" content="HANDAM Coastal Rosa Active Recovery Serum. Korea's native beach rose (Rosa rugosa), reinterpreted through ultra-fine micro-extraction for antioxidant recovery, barrier support, and deep hydration. Premium active skincare for sensitive skin." />
+  <meta name="theme-color" content="#EEF4F7" />
+  <meta property="og:title" content="HANDAM — Coastal Rosa Active Recovery Serum" />
+  <meta property="og:description" content="Korean native botanicals, reinterpreted with modern active technology." />
+  <meta property="og:image" content="images/cut2.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'Georgia', 'serif'],
+          },
+          colors: {
+            paper: '#FBFCFD',
+            mist:  '#EEF4F7',
+            mist2: '#E2EDF2',
+            ink:   '#16252D',
+            ink2:  '#3A4D57',
+            mute:  '#6A7C86',
+            aqua:  '#7FB4CC',
+            'aqua-deep': '#3E7E99',
+            'aqua-soft': '#DCEBF1',
+            rosa:  '#C58B92',
+            'rosa-soft': '#F2E4E5',
+          },
+          letterSpacing: { wider2: '0.22em', widest2: '0.34em' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
+    html, body { background:#FBFCFD; color:#16252D; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    section[id] { scroll-margin-top: 92px; }
+
+    .display { font-family:'Fraunces', Georgia, serif; }
+    .eyebrow { letter-spacing:.32em; text-transform:uppercase; font-size:11px; font-weight:500; }
+
+    /* fine grain to keep the whites from going flat */
+    .grain { position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.16  0 0 0 0 0.20  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+    .reveal { opacity:0; transform:translateY(26px); transition:opacity 1.1s cubic-bezier(.22,.61,.36,1), transform 1.1s cubic-bezier(.22,.61,.36,1); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+    .rule { height:1px; background:linear-gradient(90deg, rgba(22,37,45,.14), rgba(22,37,45,0)); }
+
+    .nav-glass { background:rgba(251,252,253,.74); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+
+    .btn-ink { background:#16252D; color:#FBFCFD; transition:transform .4s cubic-bezier(.22,.61,.36,1), background .3s; }
+    .btn-ink:hover { background:#3E7E99; transform:translateY(-2px); }
+    .btn-ghost { border:1px solid rgba(22,37,45,.22); transition:border-color .3s, color .3s; }
+    .btn-ghost:hover { border-color:#3E7E99; color:#3E7E99; }
+
+    /* aqueous gradient washes */
+    .wash-hero { background:
+        radial-gradient(120% 90% at 78% 8%, #DCEBF1 0%, rgba(220,235,241,0) 55%),
+        radial-gradient(90% 80% at 12% 88%, #EAF3F6 0%, rgba(234,243,246,0) 60%),
+        linear-gradient(180deg, #FBFCFD 0%, #EEF4F7 100%); }
+    .wash-soft { background:linear-gradient(180deg, #FBFCFD 0%, #F1F7F9 100%); }
+    .wash-deep { background:linear-gradient(160deg, #16252D 0%, #1E3A45 60%, #28586B 100%); }
+
+    .card { background:rgba(255,255,255,.7); border:1px solid rgba(126,180,204,.22); backdrop-filter:blur(6px);
+      transition:transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .55s, border-color .3s; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 28px 60px -34px rgba(22,37,45,.45); border-color:rgba(62,126,153,.4); }
+
+    .photo-soft { box-shadow:0 40px 90px -50px rgba(22,55,68,.6); }
+
+    @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-16px);} }
+    .floaty { animation:floatY 7s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){ .floaty{ animation:none; } }
+
+    @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+    .marquee-track { animation:marquee 34s linear infinite; }
+
+    .ghost-word { font-family:'Fraunces',serif; color:#3E7E99; opacity:.06; line-height:.78; user-select:none; pointer-events:none; }
+
+    .num { font-family:'Fraunces',serif; font-weight:300; color:#3E7E99; }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-ink" id="top">
+<div class="grain"></div>
+
+<!-- ===== NAV ===== -->
+<header class="fixed top-0 inset-x-0 z-50 nav-glass border-b border-[rgba(22,37,45,.07)]">
+  <nav class="max-w-7xl mx-auto h-[68px] px-5 md:px-8 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="display text-[22px] tracking-[.18em] font-medium">HANDAM</span>
+      <span class="hidden sm:inline text-[11px] text-mute tracking-wider2 uppercase">Korean Botanical Science</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-9 text-[13px] text-ink2">
+      <li><a class="hover:text-aqua-deep transition" href="#philosophy">Philosophy</a></li>
+      <li><a class="hover:text-aqua-deep transition" href="#ingredient">Ingredient</a></li>
+      <li><a class="hover:text-aqua-deep transition" href="#technology">Technology</a></li>
+      <li><a class="hover:text-aqua-deep transition" href="#serum">The Serum</a></li>
+      <li><a class="hover:text-aqua-deep transition" href="#ritual">Ritual</a></li>
+    </ul>
+    <a href="#serum" class="btn-ink rounded-full px-5 py-2.5 text-[13px] font-medium">Discover</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="wash-hero relative overflow-hidden pt-[68px]">
+  <div class="absolute right-4 top-24 hidden lg:block text-[170px] ghost-word">Rosa</div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 items-center min-h-[88vh] py-16">
+    <div class="lg:col-span-6 reveal">
+      <p class="eyebrow text-aqua-deep mb-6">Native Korean Botanical · Active Recovery</p>
+      <h1 class="display text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.02] font-light text-ink">
+        Nature, <span class="italic text-aqua-deep">drawn deeper.</span>
+      </h1>
+      <p class="mt-7 max-w-md text-[16px] leading-relaxed text-ink2">
+        Korea's native beach rose, reinterpreted through modern active technology.
+        An antioxidant recovery serum that calms, restores the barrier, and
+        delivers deep hydration — gentle enough for sensitive skin.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-3">
+        <a href="#serum" class="btn-ink rounded-full px-7 py-3.5 text-[14px] font-medium">Meet Coastal Rosa</a>
+        <a href="#ingredient" class="btn-ghost rounded-full px-7 py-3.5 text-[14px] font-medium text-ink2">The botanical story</a>
+      </div>
+      <div class="mt-10 flex items-center gap-7 text-[12px] text-mute tracking-wide">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-aqua"></span>Antioxidant</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-aqua"></span>Barrier care</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-aqua"></span>Deep hydration</span>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 reveal">
+      <div class="relative mx-auto max-w-[460px]">
+        <div class="absolute inset-0 -m-8 rounded-[40px] bg-gradient-to-b from-aqua-soft to-transparent blur-2xl opacity-70"></div>
+        <img src="images/cut2.png" alt="HANDAM Coastal Rosa Active Recovery Serum suspended in water"
+             class="relative w-full rounded-[28px] photo-soft floaty" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE MARQUEE ===== -->
+<section class="bg-ink text-paper py-5 overflow-hidden">
+  <div class="flex whitespace-nowrap marquee-track">
+    <div class="flex items-center gap-10 pr-10 text-[13px] tracking-wider2 uppercase text-paper/80">
+      <span>Native Ingredient</span><span class="text-aqua">✦</span>
+      <span>Active Technology</span><span class="text-aqua">✦</span>
+      <span>Functional Skincare</span><span class="text-aqua">✦</span>
+      <span>Sustainable Beauty</span><span class="text-aqua">✦</span>
+    </div>
+    <div class="flex items-center gap-10 pr-10 text-[13px] tracking-wider2 uppercase text-paper/80" aria-hidden="true">
+      <span>Native Ingredient</span><span class="text-aqua">✦</span>
+      <span>Active Technology</span><span class="text-aqua">✦</span>
+      <span>Functional Skincare</span><span class="text-aqua">✦</span>
+      <span>Sustainable Beauty</span><span class="text-aqua">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section id="philosophy" class="wash-soft py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 reveal">
+        <p class="eyebrow text-aqua-deep mb-5">Philosophy</p>
+        <h2 class="display text-[34px] md:text-[46px] leading-[1.08] font-light">
+          The nature of Korea,<br />delivered as skincare.
+        </h2>
+        <p class="mt-7 text-[15.5px] leading-relaxed text-ink2 max-w-md">
+          Most of K-beauty leans on the same OEM structures and imported actives.
+          HANDAM takes a different path — rediscovering the value of Korea's own
+          native plants and translating them, through science, into their most
+          effective form for skin.
+        </p>
+        <p class="mt-4 text-[15.5px] leading-relaxed text-ink2 max-w-md">
+          Not simply “natural” cosmetics, but functional active skincare grounded
+          in evidence.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5 reveal">
+        <div class="card rounded-2xl p-7">
+          <iconify-icon icon="ph:leaf-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <h3 class="display text-[22px] mt-4 font-normal">Native Ingredient</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">Built on Korea's own wild-growing botanicals, not imported defaults.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <iconify-icon icon="ph:atom-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <h3 class="display text-[22px] mt-4 font-normal">Active Technology</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">Ultra-fine micro-extraction draws actives out with higher efficiency.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <iconify-icon icon="ph:drop-half-bottom-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <h3 class="display text-[22px] mt-4 font-normal">Functional Skincare</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">Formulated for real, measurable improvement in skin condition.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <iconify-icon icon="ph:recycle-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <h3 class="display text-[22px] mt-4 font-normal">Sustainable Beauty</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">Renewable native sourcing that respects both skin and origin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY INGREDIENT — ROSA RUGOSA ===== -->
+<section id="ingredient" class="relative py-24 md:py-32 bg-paper overflow-hidden">
+  <div class="absolute left-0 top-10 hidden lg:block text-[150px] ghost-word">閑談</div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1 reveal">
+      <div class="relative mx-auto max-w-[440px]">
+        <div class="absolute inset-0 -m-6 rounded-[36px] bg-gradient-to-tr from-rosa-soft via-aqua-soft to-transparent blur-2xl opacity-80"></div>
+        <img src="images/cut1.png" alt="HANDAM serum bottle with soft reflection"
+             class="relative w-full rounded-[24px] photo-soft" decoding="async" />
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 order-1 lg:order-2 reveal">
+      <p class="eyebrow text-rosa mb-5">The hero botanical</p>
+      <h2 class="display text-[34px] md:text-[48px] leading-[1.05] font-light">
+        Rosa rugosa<br /><span class="text-mute text-[24px] md:text-[30px] italic">the Korean coastal beach rose</span>
+      </h2>
+      <p class="mt-7 text-[15.5px] leading-relaxed text-ink2 max-w-lg">
+        A botanical resource listed in Korea's National Species Inventory.
+        Thriving along the country's coastlines, the beach rose offers a
+        native-grown alternative to imported rosehip — rich in antioxidants,
+        traceable, and sustainable to source.
+      </p>
+
+      <div class="mt-9 grid sm:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-aqua/25 bg-aqua-soft/40 p-6">
+          <p class="eyebrow text-aqua-deep">Flower extract</p>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-ink2">Soothes, refines texture, and helps re-balance the skin.</p>
+        </div>
+        <div class="rounded-2xl border border-rosa/25 bg-rosa-soft/50 p-6">
+          <p class="eyebrow text-rosa">Fruit extract</p>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-ink2">Vitamin C, polyphenols & carotenoids for antioxidant care.</p>
+        </div>
+      </div>
+
+      <div class="mt-7 flex flex-wrap gap-2.5">
+        <span class="text-[12px] px-3.5 py-1.5 rounded-full border border-ink/15 text-ink2">Rosehip alternative</span>
+        <span class="text-[12px] px-3.5 py-1.5 rounded-full border border-ink/15 text-ink2">Antioxidant-rich</span>
+        <span class="text-[12px] px-3.5 py-1.5 rounded-full border border-ink/15 text-ink2">Native &amp; traceable</span>
+        <span class="text-[12px] px-3.5 py-1.5 rounded-full border border-ink/15 text-ink2">Sustainably sourced</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY ===== -->
+<section id="technology" class="wash-deep text-paper py-24 md:py-32 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow text-aqua mb-5">Active Technology</p>
+      <h2 class="display text-[34px] md:text-[50px] leading-[1.06] font-light text-paper">
+        Ultra-fine micro-extraction.
+      </h2>
+      <p class="mt-6 text-[15.5px] leading-relaxed text-paper/70 max-w-xl">
+        Before extraction, the botanical is micronized to a particle size of
+        <span class="text-aqua">40–50&nbsp;µm</span>. Finer particles mean a larger
+        active surface — so more of the plant's good is released, more evenly,
+        with less waste.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-y-10 gap-x-16 reveal">
+      <div class="flex items-start gap-6 border-t border-paper/15 pt-7">
+        <span class="num text-[40px] leading-none">01</span>
+        <div>
+          <h3 class="text-[16px] font-medium text-paper">Higher extraction efficiency</h3>
+          <p class="mt-2 text-[14px] text-paper/60 leading-relaxed">More active compounds drawn from the same botanical.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 border-t border-paper/15 pt-7">
+        <span class="num text-[40px] leading-none">02</span>
+        <div>
+          <h3 class="text-[16px] font-medium text-paper">Even, homogenized actives</h3>
+          <p class="mt-2 text-[14px] text-paper/60 leading-relaxed">Consistent distribution for predictable performance.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 border-t border-paper/15 pt-7">
+        <span class="num text-[40px] leading-none">03</span>
+        <div>
+          <h3 class="text-[16px] font-medium text-paper">Greater raw-material yield</h3>
+          <p class="mt-2 text-[14px] text-paper/60 leading-relaxed">More of each harvest is put to use — less waste.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 border-t border-paper/15 pt-7">
+        <span class="num text-[40px] leading-none">04</span>
+        <div>
+          <h3 class="text-[16px] font-medium text-paper">Preserved potency, less variance</h3>
+          <p class="mt-2 text-[14px] text-paper/60 leading-relaxed">Actives protected and quality kept batch to batch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE SERUM ===== -->
+<section id="serum" class="wash-soft py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow text-aqua-deep mb-5">The first release</p>
+      <h2 class="display text-[34px] md:text-[52px] leading-[1.05] font-light">
+        Coastal Rosa<br /><span class="italic text-aqua-deep">Active Recovery Serum</span>
+      </h2>
+      <p class="mt-6 text-[15.5px] leading-relaxed text-ink2">
+        An antioxidant recovery serum built on native beach rose flower and fruit —
+        with the cushioned density of an ampoule and the lightness of water.
+      </p>
+    </div>
+
+    <div class="mt-16 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative mx-auto max-w-[420px]">
+          <div class="absolute inset-0 -m-6 rounded-[34px] bg-gradient-to-b from-aqua-soft to-transparent blur-2xl opacity-70"></div>
+          <img src="images/cut4.png" alt="Holding the Coastal Rosa serum with dropper"
+               class="relative w-full rounded-[24px] photo-soft" decoding="async" />
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal">
+        <!-- Ingredients -->
+        <h3 class="eyebrow text-mute mb-5">Inside the formula</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Rosa rugosa flower</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Soothing · texture · balancing</p>
+          </div>
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Rosa rugosa fruit</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Vitamin C · polyphenol · antioxidant</p>
+          </div>
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Hyaluronic acid</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Replenishing · deep hydration</p>
+          </div>
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Panthenol</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Barrier strengthening · protection</p>
+          </div>
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Centella asiatica</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Calming · sensitive-skin care</p>
+          </div>
+          <div class="rounded-xl bg-white/70 border border-aqua/20 p-5">
+            <p class="text-[15px] font-medium text-ink">Ceramide NP</p>
+            <p class="mt-1.5 text-[13px] text-mute leading-relaxed">Barrier support · moisture lock</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Functions -->
+    <div class="mt-20 reveal">
+      <h3 class="eyebrow text-aqua-deep mb-8 text-center">What it does</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="card rounded-2xl p-6 text-center">
+          <iconify-icon icon="ph:shield-check-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <p class="display text-[18px] mt-3">Antioxidant</p>
+          <p class="mt-1.5 text-[12.5px] text-mute leading-relaxed">Eases stress from environmental exposure.</p>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <iconify-icon icon="ph:wall-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <p class="display text-[18px] mt-3">Barrier care</p>
+          <p class="mt-1.5 text-[12.5px] text-mute leading-relaxed">Maintains a healthy protective layer.</p>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <iconify-icon icon="ph:plant-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <p class="display text-[18px] mt-3">Soothing</p>
+          <p class="mt-1.5 text-[12.5px] text-mute leading-relaxed">Calms skin that feels sensitized.</p>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <iconify-icon icon="ph:drop-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <p class="display text-[18px] mt-3">Hydration</p>
+          <p class="mt-1.5 text-[12.5px] text-mute leading-relaxed">Deep, water-led moisture management.</p>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <iconify-icon icon="ph:sparkle-light" class="text-3xl text-aqua-deep"></iconify-icon>
+          <p class="display text-[18px] mt-3">Recovery</p>
+          <p class="mt-1.5 text-[12.5px] text-mute leading-relaxed">Helps keep skin in healthy condition.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RITUAL / TEXTURE ===== -->
+<section id="ritual" class="bg-paper py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6 reveal">
+      <p class="eyebrow text-aqua-deep mb-5">Texture &amp; feel</p>
+      <h2 class="display text-[32px] md:text-[44px] leading-[1.08] font-light">
+        Ampoule density,<br />the lightness of water.
+      </h2>
+      <p class="mt-7 text-[15.5px] leading-relaxed text-ink2 max-w-md">
+        A medium-viscosity active serum that spreads as a rush of water, absorbs
+        fast with minimal tack, and settles into a thin, comfortable moisture
+        veil with a quiet glow. Made to wear in every season.
+      </p>
+
+      <div class="mt-9 space-y-4 max-w-md">
+        <div class="flex items-center gap-4">
+          <span class="w-20 shrink-0 eyebrow text-mute">On apply</span>
+          <span class="rule flex-1"></span>
+          <span class="text-[14px] text-ink2">Water spreads instantly</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="w-20 shrink-0 eyebrow text-mute">Absorbed</span>
+          <span class="rule flex-1"></span>
+          <span class="text-[14px] text-ink2">Minimal surface residue</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="w-20 shrink-0 eyebrow text-mute">Finish</span>
+          <span class="rule flex-1"></span>
+          <span class="text-[14px] text-ink2">A thin, comfortable veil</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="w-20 shrink-0 eyebrow text-mute">Skin fit</span>
+          <span class="rule flex-1"></span>
+          <span class="text-[14px] text-ink2">Sensitive-skin friendly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 reveal">
+      <div class="relative mx-auto max-w-[520px]">
+        <div class="absolute inset-0 -m-6 rounded-[34px] bg-gradient-to-tr from-aqua-soft to-transparent blur-2xl opacity-70"></div>
+        <img src="images/cut3.png" alt="Serum texture drawn across the back of the hand"
+             class="relative w-full rounded-[22px] photo-soft" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO IT'S FOR ===== -->
+<section class="wash-soft py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6 reveal">
+      <div class="relative mx-auto max-w-[480px]">
+        <div class="absolute inset-0 -m-6 rounded-[36px] bg-gradient-to-b from-rosa-soft via-aqua-soft to-transparent blur-2xl opacity-70"></div>
+        <img src="images/cut5.png" alt="Model applying the Coastal Rosa serum to her face"
+             class="relative w-full rounded-[24px] photo-soft" decoding="async" />
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 reveal">
+      <p class="eyebrow text-aqua-deep mb-5">Who it's for</p>
+      <h2 class="display text-[30px] md:text-[44px] leading-[1.1] font-light">
+        For skin that runs dry beneath the surface, feels reactive, and longs to
+        get back to balance.
+      </h2>
+      <p class="mt-6 text-[15.5px] leading-relaxed text-ink2 max-w-md">
+        Made with women in their 20s and 30s in mind — for the everyday concerns
+        of inner dryness, a tired barrier, and skin that simply needs calming.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-2.5">
+        <span class="text-[13px] px-4 py-2 rounded-full bg-white/70 border border-aqua/25 text-ink2">Inner dryness</span>
+        <span class="text-[13px] px-4 py-2 rounded-full bg-white/70 border border-aqua/25 text-ink2">Compromised barrier</span>
+        <span class="text-[13px] px-4 py-2 rounded-full bg-white/70 border border-aqua/25 text-ink2">In need of calm</span>
+        <span class="text-[13px] px-4 py-2 rounded-full bg-white/70 border border-aqua/25 text-ink2">Off-condition skin</span>
+        <span class="text-[13px] px-4 py-2 rounded-full bg-white/70 border border-aqua/25 text-ink2">Sensitive skin</span>
+      </div>
+      <p class="mt-8 text-[13px] tracking-wider2 uppercase text-mute">Positioned as a premium active serum</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION / CTA ===== -->
+<section class="wash-deep text-paper py-24 md:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[.07] pointer-events-none">
+    <div class="ghost-word text-[220px] absolute -right-6 -bottom-10 text-paper">HANDAM</div>
+  </div>
+  <div class="max-w-4xl mx-auto px-5 md:px-8 text-center reveal relative">
+    <p class="eyebrow text-aqua mb-6">The vision</p>
+    <h2 class="display text-[30px] md:text-[46px] leading-[1.12] font-light text-paper">
+      From Korea's native botanicals to a global name in active beauty.
+    </h2>
+    <p class="mt-7 text-[15.5px] leading-relaxed text-paper/65 max-w-xl mx-auto">
+      HANDAM is more than functional skincare built on native ingredients — it's
+      a Korean brand setting out to stand among the world's active beauty leaders.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      <a href="#serum" class="btn-ink rounded-full px-8 py-4 text-[14px] font-medium" style="background:#FBFCFD;color:#16252D;">Shop Coastal Rosa</a>
+      <a href="#philosophy" class="rounded-full px-8 py-4 text-[14px] font-medium border border-paper/30 text-paper hover:border-aqua transition">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-paper/70 py-14">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div>
+        <p class="display text-[26px] tracking-[.18em] text-paper">HANDAM</p>
+        <p class="mt-3 text-[13px] text-paper/55 max-w-xs leading-relaxed">
+          Korean native botanicals, reinterpreted with modern active technology.
+        </p>
+      </div>
+      <ul class="flex flex-wrap gap-x-8 gap-y-2 text-[13px]">
+        <li><a href="#philosophy" class="hover:text-aqua transition">Philosophy</a></li>
+        <li><a href="#ingredient" class="hover:text-aqua transition">Ingredient</a></li>
+        <li><a href="#technology" class="hover:text-aqua transition">Technology</a></li>
+        <li><a href="#serum" class="hover:text-aqua transition">The Serum</a></li>
+      </ul>
+    </div>
+    <div class="rule my-9 opacity-30"></div>
+    <div class="flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-paper/45">
+      <p>© 2026 HANDAM. Korean Botanical Science.</p>
+      <p>Native Ingredient · Active Technology · Functional · Sustainable</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
